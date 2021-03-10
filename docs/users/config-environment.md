@@ -82,3 +82,11 @@ This environment variable changes the metadata of produced NuGet packages. See [
 #### VCPKG_USE_NUGET_CACHE
 
 This environment variable allows using NuGet's cache for every nuget-based binary source. See [Binary Caching](binarycaching.md#NuGets-cache) for more details.
+
+#### VCPKG_CXX_COMPILER_HASH_CMAKE_EXPRESSION
+
+By default, the hash of the C++ compiler binary is used to determine part of the triplet hash which appears in `vcpkg_abi_info.txt`. This environment variable can be set to a CMake expression that will be hashed instead of the compiler binary. For instance, it could be set to `'${CMAKE_CXX_COMPILER_ID}-${CMAKE_CXX_COMPILER_VERSION}'`.
+
+#### VCPKG_C_COMPILER_HASH_CMAKE_EXPRESSION
+
+By default, the hash of the C compiler binary is used to determine part of the triplet hash which appears in `vcpkg_abi_info.txt`. This environment variable can be set to a CMake expression that will be hashed instead of the compiler binary. For instance, it could be set to `'${CMAKE_C_COMPILER_ID}-${CMAKE_C_COMPILER_VERSION}'`.
